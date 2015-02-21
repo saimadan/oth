@@ -26,62 +26,84 @@
 		<form role="form" id="data" enctype="multipart/form-data" method="post" >
 			<h2> Sign Up </h2>
 			<hr class="colorgraph">
+
 			<div class="row">
 				<div class="col-xs-12 col-sm-6 col-md-6">		
 					<div class="form-group">
-                        <input type="text" name="first_name" id="first_name" class="form-control input-lg" placeholder="First Name" tabindex="1">
-					</div>
-				</div>
-				<div class="col-xs-12 col-sm-6 col-md-6">
-					<div class="form-group">
-						<input type="text" name="last_name" id="last_name" class="form-control input-lg" placeholder="Last Name" tabindex="1">
-					</div>
-				</div>
-			</div>
-			<div class="form-group">
-				<input type="email" name="email1" id="email1" class="form-control input-lg" placeholder="Email Address" tabindex="1">
-				<input type="email" name="email2" id="email2" class="form-control input-lg" placeholder="Email Address" tabindex="1">
-			</div>
-
-			<div class="row">
-				<div class="col-xs-12 col-sm-6 col-md-6">
-					<div class="form-group">
-                        <input type="text" name="phone" id="phone" maxlength="10" size="10" class="form-control input-lg" placeholder="Phone Number" tabindex="1">
-					</div>
-				</div>
-				<div class="col-xs-12 col-sm-6 col-md-6">
-					<div class="form-group">
-						<input type="text" name="roll" id="roll" maxlength="12" size="12" class="form-control input-lg" placeholder="Roll Number" tabindex="1">
-					</div>
-				</div>
-
-			</div>
-			
-
-			<div class="row">
-				<div class="col-xs-12 col-sm-6 col-md-6">
-					<div class="form-group">
-                        <input type="text" name="grad_year" id="grad_year" maxlength="4" size="4" class="form-control input-lg" placeholder="Graduation Year" tabindex="1">
+                        <input type="text" name="team_name" id="team_name" class="form-control input-lg" placeholder="Team Name" tabindex="1">
 					</div>
 				</div>
 				<div class="col-xs-12 col-sm-6 col-md-6">
 					<div class="form-group">
 							<select class="selectpicker" data-size="5" id="teamsize" name="teamsize">
+									<option>Team Size</option>
 									<option>1</option>
 									<option>2</option>
 							</select>
 					</div>
 				</div>
 			</div>
+
+			<div class="row">
+				<div class="col-xs-12 col-sm-6 col-md-6">		
+					<div class="form-group">
+                        <input type="text" name="name_contestant1" id="name_contestant1" class="form-control input-lg" placeholder="Enter Contestant1 Name" tabindex="1">
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-6 col-md-6">
+					<div class="form-group">
+						<input type="email" name="email1" id="email1" class="form-control input-lg" placeholder="Email Address" tabindex="1">
+					</div>
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="col-xs-12 col-sm-6 col-md-6">
+					<div class="form-group">
+                        <input type="text" name="phone_contestant1" id="phone_contestant1" maxlength="10" size="10" class="form-control input-lg" placeholder="Phone Number Contestant1" tabindex="1">
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-6 col-md-6">
+					<div class="form-group">
+						<input type="text" name="college_contestant1" id="college_contestant1" maxlength="12" size="12" class="form-control input-lg" placeholder="college Contestant1" tabindex="1">
+					</div>
+				</div>
+			</div>
 			
 
+			<div class="row">
+				<div class="col-xs-12 col-sm-6 col-md-6">
+					<div class="form-group">
+                        <input type="text" name="name_contestant2" id="name_contestant2" class="form-control input-lg" placeholder="Enter Contestant2 Name" tabindex="1">
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-6 col-md-6">
+					<div class="form-group">
+						<input type="email" name="email1" id="email1" class="form-control input-lg" placeholder="Email Address" tabindex="1">
+					</div>
+				</div>
+			</div>
 
+			<div class="row">
+				<div class="col-xs-12 col-sm-6 col-md-6">
+					<div class="form-group">
+                        <input type="text" name="phone_contestant2" id="phone_contestant2" maxlength="10" size="10" class="form-control input-lg" placeholder="Phone Number Contestant2" tabindex="1">
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-6 col-md-6">
+					<div class="form-group">
+						<input type="text" name="college_contestant2" id="college_contestant2" maxlength="12" size="12" class="form-control input-lg" placeholder="college Contestant2" tabindex="1">
+					</div>
+				</div>
+			</div>
 
-			
-			
-	  	
-    <textarea class="form-control" rows="3" maxlength="500"  name="message" id="message" class="message" placeholder="any requirements"></textarea>
-	
+			<div class="row">
+				<div class="col-xs-12 col-sm-6 col-md-6">
+					<div class="form-group">
+                        <input type="password" name="password" id="password" maxlength="4" size="4" class="form-control input-lg" placeholder="Team Password" tabindex="1">
+					</div>
+				</div>
+			</div>	
 			<hr class="colorgraph">
 			<div class="row">
 				<div class="col-xs-12 col-md-8">
