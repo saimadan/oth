@@ -1,110 +1,148 @@
-$.ajaxSetup({global:true});
-   // $("#cat_score").filestyle();
-    $(document).ready(function(){
-     	$('.selectpicker').selectpicker();
-    $('file').filestyle()
-/*    var first_name=$("#first_name").val();
-    var last_name=$("#last_name").val();
-    var email=$("#email").val();
-    var phone=$("#phone").val();
-    var roll=$("#roll").val();
-    var grad_year=$("#grad_year").val();
-    var branch=$("#branch").val();
-    var gre_score=$("#gre_score").val();
-    var toefl_score=$("#toefl_score").val();
-    var cat_score=$("#cat_score").val();*/
-           function isAlphanumeric( str ) {
-            return /^[a-zA-Z]+$/.test(str);
-        }
-    $("form#data").submit(function(event){
-    
-            $body = $("body"); 
-       $body.addClass("loading");
-   
-    	event.preventDefault();
-       // var numericReg=/((\+*)((0[ -]+)*|(91 )*)(\d{12}+|\d{10}+))|\d{5}([- ]*)\d{6}/;
-        var phone=$("#phone").val();
-        var roll=$("#roll").val();
-        var grad_year=parseInt($("#grad_year").val().trim());
-        var gre=parseInt($("#gre").val().trim());///!/\d{3}/.test(gre) &&
-        var toefl=parseInt($("#toefl").val().trim());
-        var cat=$("#cat").val();
-        var email=$("#email").val();
-        var message=$("#message").val();
+$.ajaxSetup({
+    global: true
+});
+// $("#cat_score").filestyle();
+$(document).ready(function() {
+    $('.selectpicker').selectpicker();
 
-        var err="";
+    function checkEmail(email) {
+        var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+        if (!filter.test(email))
+            return false;
+        email.focus;
+        return true;
+    }
+
+    function isAlphanumeric(str) {
+        return /^[a-zA-Z]+$/.test(str);
+    }
+    $("#teamsize").change(function() {
+        teamsz = $("#teamsize").val();
+        if (teamsz.localeCompare("2") == 0) {
+            $("contestant").empty();
+
+            //            alert(teamsz);
+
+            $("#contestant").append(
+                " <div class=\"row\">" + "<div class=\"col-xs-12 col-sm-6 col-md-6\">" +
+                "<div class=\"form-group\">" +
+                "<input type=\"text\" name=\"name_contestant2\" id=\"name_contestant2\" class=\"form-control input-lg\" placeholder=\"Enter Contestant2 Name\" tabindex=\"1\">" +
+                "<\/div>" +
+                "<\/div>" +
+                "<div class=\"col-xs-12 col-sm-6 col-md-6\">" +
+                "<div class=\"form-group\">" +
+                "   <input type=\"email\" name=\"email1\" id=\"email_contestant2\" class=\"form-control input-lg\" placeholder=\"Email Address\" tabindex=\"1\">" +
+                "<\/div>" +
+                "<\/div>" +
+                "<\/div>" +
+
+                "<div class=\"row\">" +
+                "<div class=\"col-xs-12 col-sm-6 col-md-6\">" +
+                "<div class=\"form-group\">" +
+                "<input type=\"text\" name=\"phone_contestant2\" id=\"phone_contestant2\" maxlength=\"10\" size=\"10\" class=\"form-control input-lg\" placeholder=\"Phone Number Contestant2\" tabindex=\"1\">" +
+                "<\/div>" +
+                "<\/div>" +
+                "<div class=\"col-xs-12 col-sm-6 col-md-6\">" +
+                "<div class=\"form-group\">" +
+                "<input type=\"text\" name=\"college_contestant2\" id=\"college_contestant2\" maxlength=\"12\" size=\"12\" class=\"form-control input-lg\" placeholder=\"college Contestant2\" tabindex=\"1\">" +
+                "<\/div>" +
+                "<\/div>" +
+                "<\/div>");
+        } else
+            $("#contestant").empty();
+
+    });
+    $("form").submit(function(event) {
+        $body = $("body");
+        //$body.addClass("loading");
+        alert("fash");
+        event.preventDefault();
+        // var numericReg=/((\+*)((0[ -]+)*|(91 )*)(\d{12}+|\d{10}+))|\d{5}([- ]*)\d{6}/;
+        var teamname = $("#teamname").val().trim();
+        var teamsize = $("#teamsize").val();
+        var password = $("#password").val();
+
+        var phone = [];
+        var college = [];
+        var realname = [];
+        var email = [];
+
+        phone.push($("#phone_contestant1").val());
+        college.push($("#college_contestant1").val().trim());
+        realname.push($("#name_contestant1").val().trim());
+        email.push($("#email_contestant1").val().trim());
+        if (teamsize == 2) {
+            phone.push($("#phone_contestant2").val());
+            college.push($("#college_contestant2").val().trim());
+            realname.push($("#name_contestant2").val().trim());
+            email.push($("#email_contestant2").val().trim());
+        }
+
+        var err = "";
         //alert(grad_year);
 
 
-
-        if($("#cat").val().length==4)
-            cat+="0";
-
-        if(!isAlphanumeric( $("#first_name").val() ))        
-            err+="first name should not be empty and should not contain any special characters\n\n";
-        if(!isAlphanumeric( $("#last_name").val() ))        
-            err+="last name should not be empty and should not contain any special characters\n\n";
-        if(!/\(|\)|\d{12}/.test(roll))
-            err+="please enter a proper roll number\n";
-        if(! /[2-9]{2}\d{8}/.test(phone))
-            err+="please enter a proper phone number\n";
-        if(email.localeCompare("")==0)
-            err+="please enter email address\n"
-        if(grad_year<1981 || grad_year>2099)
-            err+="please enter a proper year\n";
-        if( gre<260 || gre>340)
-            err+="please enter a proper gre score\n";
-        if( toefl<0 || toefl>120)
-            err+="please enter a proper toefl score\n";
-        if( !(cat.localeCompare("")==0) && !/^(100\.0000|[1-9]?\d\.\d{2})$/.test(cat))
-            err+="please enter a proper cat percentile";
-        if( message.localeCompare("")==0)
-            err+="please tell your concern or purpose of registration as a message";
-        if(err.localeCompare("")!=0)
-        {
-            alert(err);
+        if (teamname.length == 0 || !isAlphanumeric(teamname))
+            err += "team name should not be empty and should not contain any special characters\n";
+        for (var i = 0; i < college.length; i++)
+            if (college[i].length == 0 || !isAlphanumeric(college[i])) {
+                err += "college name should not be empty and should not contain any special characters\n";
+                break;
+            }
+        for (var i = 0; i < realname.length; i++)
+            if (realname[i].length == 0 || !isAlphanumeric(realname[i])) {
+                err += "contestant name should not be empty and should not contain any special characters\n";
+                break;
+            }
+        for (var i = 0; i < phone.length; i++)
+            if (!/[2-9]{2}\d{8}/.test(phone[i])) {
+                err += "please enter a proper phone number\n";
+                break;
+            }
+        for (var i = 0; i < email.length; i++)
+            if (!checkEmail(email[i])) {
+                err += "please enter a email address\n";
+                break;
+            }
+        alert("def");
+        if (err.localeCompare("") != 0) {
+            //alert(err);
+            BootstrapDialog.alert(err);
             return;
         }
-        else if(isNaN(gre)&&isNaN(toefl)&&(cat.localeCompare("")==0))
-        {
-                alert("please enter gre score or cat score or toefl score");
-                return;
-        }
-            //alert("gre"+gre+"\n"+"cat"+cat+"\n"+"toefl"+toefl+"\n");
-        
-    
-     var formData = new FormData($(this)[0]);
-   
-    	$.ajax({
-    	url:"uploader.php",
-    	type:"POST",
-    	data:formData,
-        async: false,
-        cache: false,
-        contentType: false,
-        processData: false,
-    	success:function(data, textStatus, jqXHR)
-    	{
-            if(data.localeCompare(data,"success")==0)
-    		  alert("sent data"+data);
-            else
-               alert("sent data"+data);
-                     $body.removeClass("loading");
-   
-    	},
-    	error:function(jqXHR, textStatus, errorThrown)
-    	{
-    		alert(textStatus+"failed"+errorThrown+" "+jqXHR);
-    		console.log(jqXHR);
-                     $body.removeClass("loading");
-   
-    	}
 
-    	});
+
+
+        var formData = new FormData($(this)[0]);
+        $.ajax({
+            url: "uploader.php",
+            type: "POST",
+            data: formData,
+            async: false,
+            cache: false,
+            contentType: false,
+            processData: false,
+            success: function(data, textStatus, jqXHR) {
+                if (data.localeCompare(data, "success") == 0)
+                    alert("sent data" + data);
+                else
+                    alert("sent data" + data);
+                $body.removeClass("loading");
+
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                alert(textStatus + "failed" + errorThrown + " " + jqXHR);
+                console.log(jqXHR);
+                $body.removeClass("loading");
+
+            }
+
         });
-
     });
-    /*
+});
+
+
+/*
    $body = $("body"); 
 $(document).ready(function() {
     $.ajaxSetup({
@@ -116,7 +154,7 @@ $(document).ready(function() {
         }
     });
 });*/
-   /* $body = $("body");
+/* $body = $("body");
 
 $(document).on({
     ajaxStart: function() { $body.addClass("loading");    },

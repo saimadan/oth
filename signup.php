@@ -21,6 +21,25 @@
 
 <div class="container">
 
+<div class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h4 class="modal-title">Modal title</h4>
+      </div>
+      <div class="modal-body">
+        <p>One fine body…</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+ 
+
 <div class="row">
     <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
 		<form role="form" id="data" enctype="multipart/form-data" method="post" >
@@ -30,7 +49,7 @@
 			<div class="row">
 				<div class="col-xs-12 col-sm-6 col-md-6">		
 					<div class="form-group">
-                        <input type="text" name="team_name" id="team_name" class="form-control input-lg" placeholder="Team Name" tabindex="1">
+                        <input type="text" name="teamname" id="teamname" class="form-control input-lg" placeholder="Team Name" tabindex="1">
 					</div>
 				</div>
 				<div class="col-xs-12 col-sm-6 col-md-6">
@@ -52,7 +71,7 @@
 				</div>
 				<div class="col-xs-12 col-sm-6 col-md-6">
 					<div class="form-group">
-						<input type="email" name="email1" id="email1" class="form-control input-lg" placeholder="Email Address" tabindex="1">
+						<input type="email" name="email_contestant1" id="email_contestant1" class="form-control input-lg" placeholder="Email Address" tabindex="1">
 					</div>
 				</div>
 			</div>
@@ -70,37 +89,16 @@
 				</div>
 			</div>
 			
-
-			<div class="row">
-				<div class="col-xs-12 col-sm-6 col-md-6">
-					<div class="form-group">
-                        <input type="text" name="name_contestant2" id="name_contestant2" class="form-control input-lg" placeholder="Enter Contestant2 Name" tabindex="1">
-					</div>
-				</div>
-				<div class="col-xs-12 col-sm-6 col-md-6">
-					<div class="form-group">
-						<input type="email" name="email1" id="email1" class="form-control input-lg" placeholder="Email Address" tabindex="1">
-					</div>
-				</div>
-			</div>
-
-			<div class="row">
-				<div class="col-xs-12 col-sm-6 col-md-6">
-					<div class="form-group">
-                        <input type="text" name="phone_contestant2" id="phone_contestant2" maxlength="10" size="10" class="form-control input-lg" placeholder="Phone Number Contestant2" tabindex="1">
-					</div>
-				</div>
-				<div class="col-xs-12 col-sm-6 col-md-6">
-					<div class="form-group">
-						<input type="text" name="college_contestant2" id="college_contestant2" maxlength="12" size="12" class="form-control input-lg" placeholder="college Contestant2" tabindex="1">
-					</div>
-				</div>
-			</div>
-
+			<div id="contestant"></div>
 			<div class="row">
 				<div class="col-xs-12 col-sm-6 col-md-6">
 					<div class="form-group">
                         <input type="password" name="password" id="password" maxlength="4" size="4" class="form-control input-lg" placeholder="Team Password" tabindex="1">
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-6 col-md-6">
+					<div class="form-group">
+                        <input type="password" name="re-password" id="re-password" maxlength="10" size="10" class="form-control input-lg" placeholder="re-enter Password" tabindex="1">
 					</div>
 				</div>
 			</div>	
@@ -122,7 +120,9 @@
     <script src="./dist/js/bootstrap.min.js"></script>
     <script src="./select/js/bootstrap-select.js"></script>    
     <script src="./dist/js/bootstrapfilestyle.js"></script>
+    <script src="dialog/src/js/bootstrap-dialog.js"></script>
     <script src="js/scrip.js"></script>
+    
 </body>
 </html>
 
