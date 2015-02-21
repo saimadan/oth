@@ -39,7 +39,8 @@
 				</div>
 			</div>
 			<div class="form-group">
-				<input type="email" name="email" id="email" class="form-control input-lg" placeholder="Email Address" tabindex="1">
+				<input type="email" name="email1" id="email1" class="form-control input-lg" placeholder="Email Address" tabindex="1">
+				<input type="email" name="email2" id="email2" class="form-control input-lg" placeholder="Email Address" tabindex="1">
 			</div>
 
 			<div class="row">
@@ -63,7 +64,22 @@
                         <input type="text" name="grad_year" id="grad_year" maxlength="4" size="4" class="form-control input-lg" placeholder="Graduation Year" tabindex="1">
 					</div>
 				</div>
+				<div class="col-xs-12 col-sm-6 col-md-6">
+					<div class="form-group">
+							<select class="selectpicker" data-size="5" id="teamsize" name="teamsize">
+									<option>1</option>
+									<option>2</option>
+							</select>
+					</div>
+				</div>
 			</div>
+			
+
+
+
+			
+			
+	  	
     <textarea class="form-control" rows="3" maxlength="500"  name="message" id="message" class="message" placeholder="any requirements"></textarea>
 	
 			<hr class="colorgraph">
@@ -84,7 +100,7 @@
     <script src="./dist/js/bootstrap.min.js"></script>
     <script src="./select/js/bootstrap-select.js"></script>    
     <script src="./dist/js/bootstrapfilestyle.js"></script>
-    <script src="scrip.js"></script>
+    <script src="js/scrip.js"></script>
 </body>
 </html>
 
