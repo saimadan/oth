@@ -13,6 +13,7 @@
 <link href="./select/dist/css/bootstrap-select.css.map" rel="stylesheet">
 <link href="./select/dist/css/bootstrap-select.min.css" rel="stylesheet">
 <link href="./anim.css" rel="stylesheet">
+<link href="dialog/src/css/bootstrap-dialog.css" rel="stylesheet">
 
 
 </head>
@@ -98,7 +99,7 @@
 				</div>
 				<div class="col-xs-12 col-sm-6 col-md-6">
 					<div class="form-group">
-                        <input type="password" name="re-password" id="re-password" maxlength="10" size="10" class="form-control input-lg" placeholder="re-enter Password" tabindex="1">
+                          <input type="password" name="re-password" id="re-password" maxlength="10" size="10" class="form-control input-lg" placeholder="re-enter Password" tabindex="1">
 					</div>
 				</div>
 			</div>	
@@ -121,7 +122,7 @@
     <script src="./select/js/bootstrap-select.js"></script>    
     <script src="./dist/js/bootstrapfilestyle.js"></script>
     <script src="dialog/src/js/bootstrap-dialog.js"></script>
-    <script src="js/scrip.js"></script>
+    <script src="js/register.js"></script>
     
 </body>
 </html>
